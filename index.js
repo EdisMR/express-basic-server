@@ -4,10 +4,13 @@ const express = require('express');
 
 const app = express();
 
+/* read environment variable */
+const appPort = process.env.NODEJS_PORT
+
 app.get('/', (req, res) => {
 	res.send(`Hello World! ${new Date().toISOString()}`);
 });
 
-app.listen(3000);
+app.listen(appPort);
 
-console.log('Listening on port 3000');
+console.log(`Listening simple server on port ${appPort}`);
